@@ -83,10 +83,13 @@ function myFilter (array){
 // Retorna un nuevo array con la edad de cada usuario multiplicada por x numero
 function myMap (array, multiplicate){
     let newArray = [];
+    let newElement = {};
 
     for(let i=0;i<array.length;i++){
-        newArray.push(array[i])
-        newArray[i].age = newArray[i].age * multiplicate; 
+        newElement = {...array[i]};
+        newElement.age = newElement.age * multiplicate; 
+        newArray.push(newElement);
+        
     }
 
     return newArray
@@ -157,19 +160,20 @@ function myWithOut (array, out){
     return newArray;
 }
 
-console.log('forEach');
-myforEach(users, printUser);
-console.log('\nfilter'); 
-console.log(myFilter(users));  
-console.log('\nmap');
-console.log(myMap(users,5));  
-console.log('\nfind');
-console.log(myFind(users,30)); 
-console.log('\nfindIndex');
-console.log(myFindIndex(users,30)); 
-console.log('\ncontains');
-console.log(myContains(users,'Daniela')) 
-console.log('\npluck');
-console.log(myPluck(users,'email')); 
-console.log('\nwithOut');
-console.log(myWithOut(users,'@academlo.com')) 
+// console.log('forEach');
+// myforEach(users, printUser);
+// console.log('\nfilter'); 
+// console.log(myFilter(users));  
+// console.log('\nmap');
+// console.log(myMap(users,5));
+// console.log(users)
+// console.log('\nfind');
+// console.log(myFind(users,30)); 
+// console.log('\nfindIndex');
+// console.log(myFindIndex(users,30)); 
+// console.log('\ncontains');
+// console.log(myContains(users,'Daniela')) 
+// console.log('\npluck');
+// console.log(myPluck(users,'email')); 
+// console.log('\nwithOut');
+// console.log(myWithOut(users,'@academlo.com')) 
